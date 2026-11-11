@@ -27,12 +27,14 @@ ${hreflangs}
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="${abs(path)}">
+<link rel="preload" href="/assets/fonts/Bricolage-Grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Instrument-Sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css">
 ${ld}
 ${extraHead}
 </head>
 <body>
-<header class="site-header"><a class="brand" href="${homePath(lang)}">${esc(config.siteName)}</a>
+<header class="site-header"><a class="brand" href="${homePath(lang)}"><svg class="mark" width="28" height="20" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="13" height="9" rx="2.5" fill="var(--c1)" stroke="var(--accent)" stroke-width="1.5"/><rect x="15" y="0" width="9" height="9" rx="2.5" fill="var(--c2)"/><rect x="0" y="11" width="8" height="9" rx="2.5" fill="var(--c3)"/><rect x="10" y="11" width="14" height="9" rx="2.5" fill="var(--accent)"/></svg>${esc(config.siteName)}</a>
 <nav><a href="${homePath(lang)}">${t(lang, 'home')}</a> <a href="${toolsPath(lang)}">${t(lang, 'tools')}</a> ${switcher}</nav></header>
 <main>
 ${body}

@@ -3,22 +3,14 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { layout } from './src/templates/layout.mjs';
-import { LANGS, t, homePath, toolsPath } from './src/i18n.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const optional = async (rel) => (existsSync(join(here, rel)) ? import(pathToFileURL(join(here, rel)).href) : null);
 
 /** Page = {key, lang, path, title, description, body, jsonld?, noindex?} */
-function corePages() {
-  return LANGS.map((lang) => ({
-    key: 'home', lang, path: homePath(lang), title: t(lang, 'homeTitle'), description: t(lang, 'homeDesc'),
-    body: `<h1>${t(lang, 'homeH1')}</h1><p>${t(lang, 'homeIntro')}</p><p><a href="${toolsPath(lang)}">${t(lang, 'tools')}</a></p>`,
-  }));
-}
-
 export async function collectPages(config) {
-  const pages = corePages();
-  for (const rel of ['src/tools/index.mjs', 'src/legal.mjs']) {
+  const pages = [];
+  for (const rel of ['src/home.mjs', 'src/tools/index.mjs', 'src/legal.mjs']) {
     const mod = await optional(rel);
     if (mod) pages.push(...mod.pages(config));
   }
@@ -31,6 +23,7 @@ export async function build(config, outDir) {
   await rm(outDir, { recursive: true, force: true });
   await mkdir(join(outDir, 'assets'), { recursive: true });
   await cp(join(here, 'src/styles.css'), join(outDir, 'assets/styles.css'));
+  await cp(join(here, 'src/fonts'), join(outDir, 'assets/fonts'), { recursive: true });
   if (existsSync(join(here, 'src/lib'))) await cp(join(here, 'src/lib'), join(outDir, 'assets/lib'), { recursive: true });
 
   const pages = await collectPages(config);
