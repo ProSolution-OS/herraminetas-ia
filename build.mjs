@@ -63,9 +63,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   // Sitio a construir: SITE=<id> o primer argumento (por defecto "ia"). Config en sites/<id>.json.
   // En Vercel (VERCEL=1) se escribe en dist/; en local, en dist/<id>/. "--all" construye todos.
   const { readdir } = await import('node:fs/promises');
+  const available = (await readdir(join(here, 'sites'))).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
+  // Si el repo contiene un único sitio (export con scripts/export-site.mjs), se usa ese sin necesidad de SITE.
   const ids = process.argv[2] === '--all'
-    ? (await readdir(join(here, 'sites'))).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5))
-    : [process.argv[2] ?? process.env.SITE ?? 'ia'];
+    ? available
+    : [process.argv[2] ?? process.env.SITE ?? (available.length === 1 ? available[0] : 'ia')];
   for (const id of ids) {
     const config = JSON.parse(await readFile(join(here, 'sites', `${id}.json`), 'utf8'));
     const out = process.env.VERCEL ? join(here, 'dist') : join(here, 'dist', id);
