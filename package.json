@@ -1,0 +1,6 @@
+{
+  "name": "sitio-herramientas-ia",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "build": "node build.mjs", "test": "node --test test/" }
+}
