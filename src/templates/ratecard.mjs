@@ -13,6 +13,6 @@ export function rateCard(lang, tools) {
   const rows = tools.map((x) => `<li><a class="rate" href="${toolPath(lang, x.slug[lang])}">
 <span class="rate-name">${esc(x.title[lang])}</span>
 <p class="rate-desc">${esc(x.description[lang])}</p>
-<span class="rate-hint">${esc(HINTS[x.id]?.[lang] ?? '')}</span></a></li>`);
+<span class="rate-hint">${esc(x.hint?.[lang] ?? HINTS[x.id]?.[lang] ?? '')}</span></a></li>`);
   return `<ul class="rates">${rows.join('\n')}</ul>`;
 }

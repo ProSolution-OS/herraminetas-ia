@@ -1,0 +1,29 @@
+{
+  "domain": "https://finanzas.fqsolution.site",
+  "siteName": "Finanzas Claras",
+  "adsensePublisherId": "",
+  "contactEmail": "qfreddy03@gmail.com",
+  "heroTokens": false,
+  "theme": { "accent": "#0B7A3E", "accentDark": "#5BD69A" },
+  "tools": ["compound-interest", "loan-payment", "savings-goal"],
+  "copy": {
+    "es": {
+      "homeTitle": "Calculadoras financieras gratis: interés compuesto, préstamos y ahorro",
+      "homeDesc": "Calculadora de interés compuesto, cuota de préstamo y meta de ahorro. Gratis, sin registro y con ejemplos resueltos.",
+      "homeH1": "Pon cifras a tus decisiones de dinero",
+      "homeIntro": "Calcula cuánto crecerá tu ahorro, cuánto pagarás de más por un préstamo y cuánto necesitas apartar cada mes. Sin registro y sin dejar tus datos.",
+      "ctaPrimary": "Calcular interés compuesto", "ctaSecondary": "Calcular un préstamo",
+      "toolsTitle": "Calculadoras financieras", "toolsDesc": "Calculadoras gratuitas de ahorro, interés y préstamos.",
+      "about": "Finanzas Claras reúne calculadoras gratuitas para entender el dinero: interés compuesto, cuota de préstamo y metas de ahorro. Cada herramienta explica cómo se calcula y qué significa el resultado. Los resultados son orientativos y no constituyen asesoramiento financiero. Nos financiamos con publicidad, lo que nos permite mantener todo gratis y sin registro."
+    },
+    "en": {
+      "homeTitle": "Free Financial Calculators: Compound Interest, Loans and Savings",
+      "homeDesc": "Compound interest, loan payment and savings goal calculators. Free, no sign-up, with worked examples.",
+      "homeH1": "Put numbers on your money decisions",
+      "homeIntro": "Work out how much your savings will grow, how much extra a loan will cost and how much to set aside each month. No sign-up and no data left behind.",
+      "ctaPrimary": "Calculate compound interest", "ctaSecondary": "Calculate a loan",
+      "toolsTitle": "Financial calculators", "toolsDesc": "Free calculators for savings, interest and loans.",
+      "about": "Finanzas Claras brings together free calculators to understand money: compound interest, loan payments and savings goals. Each tool explains how it is calculated and what the result means. Results are indicative and are not financial advice. We are funded by advertising, which lets us keep everything free and without sign-up."
+    }
+  }
+}

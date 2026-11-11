@@ -2,5 +2,6 @@
   "domain": "https://calculadora.fqsolution.site",
   "siteName": "Herramientas IA",
   "adsensePublisherId": "",
-  "contactEmail": "qfreddy03@gmail.com"
+  "contactEmail": "qfreddy03@gmail.com",
+  "tools": ["llm-cost", "token-counter", "prompt-generator"]
 }

@@ -26,6 +26,8 @@ const dict = {
 };
 export const LANGS = ['es', 'en'];
 export const t = (lang, key) => dict[lang][key] ?? key;
+/** Texto propio del sitio (config.copy) con respaldo en el diccionario común. */
+export const copyOf = (config, lang, key) => config?.copy?.[lang]?.[key] ?? t(lang, key);
 
 const legalSlugs = {
   es: { privacy: 'privacidad', contact: 'contacto', about: 'sobre-nosotros', terms: 'terminos' },

@@ -29,6 +29,6 @@ const BODY = {
 export function pages(config) {
   return LANGS.flatMap((lang) => LEGAL_IDS.map((id) => ({
     key: 'legal-' + id, lang, path: legalPath(lang, id), title: `${t(lang, id)} | ${config.siteName}`, description: `${t(lang, id)} — ${config.siteName}`,
-    body: `<h1>${t(lang, id)}</h1>\n${BODY[lang][id](config)}`,
+    body: `<h1>${t(lang, id)}</h1>\n${id === 'about' && config.copy?.[lang]?.about ? `<p>${esc(config.copy[lang].about)}</p>` : BODY[lang][id](config)}`,
   })));
 }

@@ -1,0 +1,29 @@
+{
+  "domain": "https://salud.fqsolution.site",
+  "siteName": "Salud en Cifras",
+  "adsensePublisherId": "",
+  "contactEmail": "qfreddy03@gmail.com",
+  "heroTokens": false,
+  "theme": { "accent": "#C2255C", "accentDark": "#FF8AB0" },
+  "tools": ["bmi", "calories", "protein"],
+  "copy": {
+    "es": {
+      "homeTitle": "Calculadoras de salud gratis: IMC, calorías diarias y proteína",
+      "homeDesc": "Calculadora de IMC, de calorías diarias y de proteína según tu peso. Gratis, sin registro y con explicaciones claras.",
+      "homeH1": "Entiende tus números de salud",
+      "homeIntro": "Calcula tu IMC, las calorías que gasta tu cuerpo y la proteína que necesitas al día. Son estimaciones orientativas para adultos sanos, explicadas paso a paso.",
+      "ctaPrimary": "Calcular mi IMC", "ctaSecondary": "Calcular calorías",
+      "toolsTitle": "Calculadoras de salud", "toolsDesc": "Calculadoras gratuitas de IMC, calorías y proteína.",
+      "about": "Salud en Cifras reúne calculadoras gratuitas sobre peso, energía y nutrición, con una explicación de cómo se calcula cada resultado. La información es orientativa y no sustituye el consejo de un profesional sanitario. Nos financiamos con publicidad, lo que nos permite mantener todo gratis y sin registro."
+    },
+    "en": {
+      "homeTitle": "Free Health Calculators: BMI, Daily Calories and Protein",
+      "homeDesc": "BMI, daily calorie and protein calculators based on your weight. Free, no sign-up, with clear explanations.",
+      "homeH1": "Understand your health numbers",
+      "homeIntro": "Work out your BMI, the calories your body burns and the protein you need each day. These are indicative estimates for healthy adults, explained step by step.",
+      "ctaPrimary": "Calculate my BMI", "ctaSecondary": "Calculate calories",
+      "toolsTitle": "Health calculators", "toolsDesc": "Free BMI, calorie and protein calculators.",
+      "about": "Salud en Cifras brings together free calculators on weight, energy and nutrition, with an explanation of how each result is calculated. The information is indicative and does not replace the advice of a healthcare professional. We are funded by advertising, which lets us keep everything free and without sign-up."
+    }
+  }
+}

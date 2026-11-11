@@ -1,20 +1,27 @@
-import costo from './costo-llm.mjs';
-import contador from './contador-tokens.mjs';
-import generador from './generador-prompts.mjs';
+import { registry } from './registry.mjs';
 import { articleHtml, faqJsonLd } from './article.mjs';
-import { LANGS, t, toolsPath, toolPath } from '../i18n.mjs';
+import { LANGS, copyOf, toolsPath, toolPath } from '../i18n.mjs';
 import { rateCard } from '../templates/ratecard.mjs';
 
-export const tools = [costo, contador, generador];
+const DEFAULT_TOOLS = ['llm-cost', 'token-counter', 'prompt-generator'];
+
+/** Herramientas del sitio, en el orden de config.tools. */
+export function toolsFor(config) {
+  return (config.tools ?? DEFAULT_TOOLS).map((id) => {
+    if (!registry[id]) throw new Error(`Herramienta desconocida: ${id}`);
+    return registry[id];
+  });
+}
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 export function pages(config) {
+  const tools = toolsFor(config);
   const out = [];
   for (const lang of LANGS) {
     out.push({
-      key: 'tools', lang, path: toolsPath(lang), title: t(lang, 'toolsTitle'), description: t(lang, 'toolsDesc'),
-      body: `<h1>${t(lang, 'toolsTitle')}</h1>${rateCard(lang, tools)}`,
+      key: 'tools', lang, path: toolsPath(lang), title: copyOf(config, lang, 'toolsTitle'), description: copyOf(config, lang, 'toolsDesc'),
+      body: `<h1>${copyOf(config, lang, 'toolsTitle')}</h1>${rateCard(lang, tools)}`,
     });
     for (const tool of tools) {
       const c = tool.content[lang];

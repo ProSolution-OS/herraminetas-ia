@@ -1,0 +1,29 @@
+{
+  "domain": "https://texto.fqsolution.site",
+  "siteName": "Taller de Texto",
+  "adsensePublisherId": "",
+  "contactEmail": "qfreddy03@gmail.com",
+  "heroTokens": false,
+  "theme": { "accent": "#B45309", "accentDark": "#FBBF63" },
+  "tools": ["word-counter", "case-converter", "slug-generator"],
+  "copy": {
+    "es": {
+      "homeTitle": "Herramientas de texto gratis: contador de palabras, mayúsculas y slug",
+      "homeDesc": "Contador de palabras, conversor de mayúsculas y minúsculas y generador de slug para URLs. Gratis y sin registro.",
+      "homeH1": "Herramientas rápidas para trabajar con texto",
+      "homeIntro": "Cuenta palabras, cambia mayúsculas y minúsculas y genera URLs limpias. Todo ocurre en tu navegador: tu texto no se envía ni se guarda.",
+      "ctaPrimary": "Contar palabras", "ctaSecondary": "Cambiar mayúsculas",
+      "toolsTitle": "Herramientas de texto", "toolsDesc": "Herramientas gratuitas para contar, convertir y limpiar texto.",
+      "about": "Taller de Texto reúne herramientas gratuitas para escribir y publicar: contador de palabras, conversor de mayúsculas y generador de slug. Todo se procesa en tu navegador y tu texto no se envía a ningún servidor. Nos financiamos con publicidad, lo que nos permite mantener todo gratis y sin registro."
+    },
+    "en": {
+      "homeTitle": "Free Text Tools: Word Counter, Case Converter and Slug Generator",
+      "homeDesc": "Word counter, uppercase and lowercase converter and URL slug generator. Free, no sign-up.",
+      "homeH1": "Quick tools for working with text",
+      "homeIntro": "Count words, change case and generate clean URLs. Everything happens in your browser: your text is never sent or saved.",
+      "ctaPrimary": "Count words", "ctaSecondary": "Change case",
+      "toolsTitle": "Text tools", "toolsDesc": "Free tools to count, convert and clean text.",
+      "about": "Taller de Texto brings together free tools for writing and publishing: a word counter, a case converter and a slug generator. Everything is processed in your browser and your text is never sent to a server. We are funded by advertising, which lets us keep everything free and without sign-up."
+    }
+  }
+}

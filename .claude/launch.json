@@ -1,1 +1,6 @@
-{"version":"0.0.1","configurations":[{"name":"dist","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8080","--directory","dist"],"port":8080}]}
+{"version":"0.0.1","configurations":[
+{"name":"ia","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8080","--directory","dist/ia"],"port":8080},
+{"name":"finanzas","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8081","--directory","dist/finanzas"],"port":8081},
+{"name":"salud","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8082","--directory","dist/salud"],"port":8082},
+{"name":"texto","runtimeExecutable":"python","runtimeArgs":["-m","http.server","8083","--directory","dist/texto"],"port":8083}
+]}

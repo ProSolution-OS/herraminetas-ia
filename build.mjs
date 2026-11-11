@@ -17,6 +17,15 @@ export async function collectPages(config) {
   return pages;
 }
 
+/** Colores propios del sitio (acento claro/oscuro) como variables CSS. */
+export function themeStyle(theme) {
+  if (!theme) return '';
+  const hex = /^#[0-9a-fA-F]{6}$/;
+  const { accent, accentDark } = theme;
+  if (!hex.test(accent) || !hex.test(accentDark)) throw new Error('theme.accent y theme.accentDark deben ser #RRGGBB');
+  return `<style>:root{--accent:${accent}}@media (prefers-color-scheme:dark){:root{--accent:${accentDark}}}</style>`;
+}
+
 const fileFor = (path) => (path.endsWith('/') ? path + 'index.html' : path);
 
 export async function build(config, outDir) {
@@ -34,6 +43,7 @@ export async function build(config, outDir) {
   for (const p of pages) {
     p.alternates = byKey[p.key];
     const extra = consent ? consent.consentParts(config, p.lang) : {};
+    extra.extraHead = themeStyle(config.theme) + (extra.extraHead ?? '');
     const file = fileFor(p.path);
     await mkdir(dirname(join(outDir, file)), { recursive: true });
     await writeFile(join(outDir, file), layout({ ...p, config, ...extra }));
@@ -50,7 +60,16 @@ export async function build(config, outDir) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  const config = JSON.parse(await readFile(join(here, 'site.config.json'), 'utf8'));
-  const files = await build(config, join(here, 'dist'));
-  console.log(`Generadas ${files.length} páginas en dist/`);
+  // Sitio a construir: SITE=<id> o primer argumento (por defecto "ia"). Config en sites/<id>.json.
+  // En Vercel (VERCEL=1) se escribe en dist/; en local, en dist/<id>/. "--all" construye todos.
+  const { readdir } = await import('node:fs/promises');
+  const ids = process.argv[2] === '--all'
+    ? (await readdir(join(here, 'sites'))).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5))
+    : [process.argv[2] ?? process.env.SITE ?? 'ia'];
+  for (const id of ids) {
+    const config = JSON.parse(await readFile(join(here, 'sites', `${id}.json`), 'utf8'));
+    const out = process.env.VERCEL ? join(here, 'dist') : join(here, 'dist', id);
+    const files = await build(config, out);
+    console.log(`[${id}] ${files.length} páginas en ${out}`);
+  }
 }

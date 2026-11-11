@@ -44,6 +44,7 @@ h3{font-size:1.1rem;font-weight:600;margin:24px 0 4px}
 .tok:nth-child(3n+2){background:var(--c2)}
 .tok:nth-child(3n){background:var(--c3)}
 .tok.w{margin-left:.3em}
+.hero h1.plain{max-width:20ch}
 .hero-sub{max-width:56ch;font-size:1.15rem;color:var(--muted);margin:0 0 28px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn,button{display:inline-block;padding:11px 20px;border:2px solid var(--accent);border-radius:8px;background:var(--accent);color:var(--on-accent);font:600 1rem/1.2 var(--body);text-decoration:none;cursor:pointer}
@@ -73,6 +74,7 @@ textarea{resize:vertical}
 input:focus-visible,textarea:focus-visible{outline-offset:1px}
 form button{margin:20px 12px 0 0}
 .result{margin-top:20px;padding:16px;border:1px dashed var(--line);border-radius:8px;min-height:3.5em;font:500 1.15rem/1.5 var(--mono);color:var(--accent);word-break:break-word}
+.result{white-space:pre-line}
 pre.result{color:var(--ink);font-size:.95rem}
 .instrument small{color:var(--muted)}
 .ad-slot{min-height:100px;margin:28px 0}
