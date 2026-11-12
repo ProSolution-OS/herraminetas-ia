@@ -1,5 +1,5 @@
 import { t } from './i18n.mjs';
-import { adsenseSnippet } from './adsense.mjs';
+import { adsenseSnippet, adsenseMeta } from './adsense.mjs';
 
 /** Devuelve el script de consentimiento: AdSense solo se carga tras aceptar. '' si no hay ID. */
 export function consentScript(config) {
@@ -20,5 +20,5 @@ export function consentParts(config, lang) {
   const banner = `<div id="cookie-banner" role="dialog" aria-label="Cookies"><span>${t(lang, 'cookieText')}</span>
 <button type="button" id="cookie-accept">${t(lang, 'accept')}</button>
 <button type="button" id="cookie-reject">${t(lang, 'reject')}</button></div>`;
-  return { extraFoot: banner + '\n' + script };
+  return { extraHead: adsenseMeta(config), extraFoot: banner + '\n' + script };
 }

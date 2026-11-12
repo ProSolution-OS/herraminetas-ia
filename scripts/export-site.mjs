@@ -26,7 +26,7 @@ for (const f of ['build.mjs', 'package.json', 'vercel.json', '.gitignore', 'src'
 await mkdir(join(dir, 'sites'));
 await cp(join(root, 'sites', `${id}.json`), join(dir, 'sites', `${id}.json`));
 await mkdir(join(dir, 'test'));
-for (const f of ['build', 'lib', 'lib2', 'tools', 'seo', 'adsense']) await cp(join(root, 'test', `${f}.test.mjs`), join(dir, 'test', `${f}.test.mjs`));
+for (const f of ['build', 'lib', 'lib2', 'tools', 'seo', 'adsense', 'adsense-meta']) await cp(join(root, 'test', `${f}.test.mjs`), join(dir, 'test', `${f}.test.mjs`));
 await writeFile(join(dir, 'README.md'), `# ${config.siteName}
 
 Sitio estático bilingüe (es/en) publicado en ${config.domain}.

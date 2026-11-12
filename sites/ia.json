@@ -1,7 +1,7 @@
 {
   "domain": "https://calculadora.fqsolution.site",
   "siteName": "Herramientas IA",
-  "adsensePublisherId": "",
+  "adsensePublisherId": "pub-3747681331852269",
   "contactEmail": "qfreddy03@gmail.com",
   "tools": ["llm-cost", "token-counter", "prompt-generator"]
 }
