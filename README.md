@@ -7,7 +7,7 @@ Generador de sitios estáticos bilingües, sin dependencias. Un solo repositorio
 | ia | `sites/ia.json` | calculadora.fqsolution.site | costo de API LLM, contador de tokens, generador de prompts |
 | finanzas | `sites/finanzas.json` | finanzas.fqsolution.site | interés compuesto, cuota de préstamo, meta de ahorro |
 | salud | `sites/salud.json` | salud.fqsolution.site | IMC, calorías diarias, proteína diaria |
-| texto | `sites/texto.json` | texto.fqsolution.site | contador de palabras, mayúsculas/minúsculas, slug |
+| texto | `sites/texto.json` | text.fqsolution.site | contador de palabras, mayúsculas/minúsculas, slug |
 
 ## Uso
 
